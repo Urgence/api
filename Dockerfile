@@ -8,4 +8,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 8080
-CMD [ "node", "." ]
+CMD [ "ts-node", ".dist/main.js" ]

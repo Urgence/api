@@ -1,6 +1,5 @@
 import { Request, Response, Router } from 'express';
-import passport from '../middlewares/passport';
-import verifyToken from '../middlewares/verifyToken';
+import UsersRoutes from './UserRoutes';
 
 const api = Router();
 
@@ -14,5 +13,5 @@ api.get('/', (req: Request, res: Response) => {
 
 // create any subroute you'd like with
 // api.use('/mysubroute', mysubroutefile)
-
+api.use('user', UsersRoutes);
 export default api;

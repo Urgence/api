@@ -33,8 +33,8 @@ export default class UsersController {
    *               items:
    *                 type: string
    */
-  static getAll = (request: Request, response: Response) => {
-     response.status(200).json('hello')
+  static getAll = async (request: Request, response: Response) => {
+    response.status(200).json('hello');
   };
 
 }
