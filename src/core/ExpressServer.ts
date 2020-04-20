@@ -53,12 +53,12 @@ class ExpressServer {
       apis: [path.resolve(__dirname, '../controllers/UsersController.ts')],
     };
     const specs = swaggerJsdoc(options);
-    this.app.use('/doc', swaggerUi.serve);
+    this.app.use('/docs', swaggerUi.serve);
     this.app.get(
-      '/docs',
-      swaggerUi.setup(specs, {
-        explorer: true,
-      }),
+        '/docs',
+        swaggerUi.setup(specs, {
+          explorer: true,
+        }),
     );
     this.app.use('/api', api);
 
