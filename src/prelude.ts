@@ -11,23 +11,24 @@ const envPathName = path.join(process.cwd(), '.env');
 const neededValues = ['PORT'];
 
 if (existsSync(envPathName)) {
-  dotenv.config();
+    dotenv.config();
 
-  const missingValues = neededValues.filter(
-    (v: string): boolean => !process.env[v],
-  );
-
-  if (!isEmpty(missingValues)) {
-    console.log(
-      chalk.red.bold(
-        `Sorry [${missingValues.join(
-          '/',
-        )}] value(s) are missing on your .env file`,
-      ),
+    const missingValues = neededValues.filter(
+        (v: string): boolean => !process.env[v],
     );
-    process.exit(42);
-  }
-} else {
-  console.log(chalk.red.bold('Sorry an .env file is missing'));
-  process.exit(42);
+    if (process.env.APP_ENV !== 'prod') {
+        if (!isEmpty(missingValues)) {
+            console.log(
+                chalk.red.bold(
+                    `Sorry [${missingValues.join(
+                        '/',
+                    )}] value(s) are missing on your .env file`,
+                ),
+            );
+            process.exit(42);
+        }
+    } else {
+        console.log(chalk.red.bold('Sorry an .env file is missing'));
+        process.exit(42);
+    }
 }
