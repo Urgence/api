@@ -15,6 +15,13 @@
     "docker:build": "docker-compose up -d --build",
     "docker:logs": "docker-compose logs -f"
   },
+  "keywords": [
+    "heroku"
+  ],
+  "engines": {
+    "node": "^11.14.0",
+    "yarn": "1.22.4"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
