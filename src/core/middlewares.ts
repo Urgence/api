@@ -31,7 +31,7 @@ export const Middlewares = (app: Application): void => {
             },
             servers: [
                 {
-                    url: `${process.env.HOST}:${process.env.PORT || 4242}/api/`,
+                    url: `${process.env.HOST}${process.env.APP_ENV === 'dev' ? ':' + process.env.PORT || 4242 : ''}/api/`,
                 },
             ],
         },
