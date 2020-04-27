@@ -38,9 +38,9 @@ export const Middlewares = (app: Application): void => {
         apis: [path.resolve(__dirname, '../controllers/*')],
     };
     const specs = swaggerJsdoc(options);
-    app.use('/docs', swaggerUi.serve);
+    app.use('/api/docs', swaggerUi.serve);
     app.get(
-        '/docs',
+        '/api/docs',
         swaggerUi.setup(specs, {
             explorer: true,
         }),

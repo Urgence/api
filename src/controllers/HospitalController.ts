@@ -8,6 +8,26 @@ export default class HospitalController {
         //  HospitalController.userRepository = getRepository(User);
     }
 
+    /**
+     * @swagger
+     * /hospital:
+     *   get:
+     *     summary: Get All hospital
+     *     description: Returns a list of hospital
+     *     tags:
+     *       - Hospital
+     *     responses:
+     *       200:
+     *         description: List of Hospital
+     *         schema:
+     *           type: object
+     *           properties:
+     *             users:
+     *               type: array
+     *               description: all the Hospital
+     *               items:
+     *                 type: string
+     */
     static getAllHospital = async (
         request: Request,
         response: Response,
