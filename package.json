@@ -32,10 +32,6 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "typeorm": "^0.2.24",
-    "uuid": "^7.0.2"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
@@ -46,6 +42,10 @@
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
+    "typeorm": "^0.2.24",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
     "@babel/runtime": "^7.9.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.6",
