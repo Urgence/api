@@ -38,6 +38,42 @@ export default class HospitalController {
             return response.json(err).status(400);
         });
     };
+    /**
+     * @swagger
+     * /hospital/search:
+     *   post:
+     *     summary: search hospital
+     *     description: Returns a list of hospital
+     *     tags:
+     *       - Hospital
+     *     parameters:
+     *      - in body:
+     *        name: query
+     *        example: paris
+     *        type: string
+     *     responses:
+     *       200:
+     *         description: List of Hospital
+     *         schema:
+     *           type: object
+     *           properties:
+     *             users:
+     *               type: array
+     *               description: all the Hospital
+     *               items:
+     *                 type: string
+     */
+    static searchHospital = async (
+        request: Request,
+        response: Response,
+    ): Promise<Response> => {
+        const { query } = request.body;
+        return axios.get(`${process.env.API_HOSPITAL_URL as string}&q=${query}`).then(result => {
+            return response.json(result.data).status(200);
+        }).catch(err => {
+            return response.json(err).status(400);
+        });
+    };
 
     /**
      * @swagger
