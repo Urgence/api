@@ -109,7 +109,7 @@ export default class HospitalController {
         response: Response,
     ): Promise<Response> => {
         const { latitude, longitude } = request.body;
-        return axios.get(`${process.env.API_HOSPITAL_URL as string}&geofilter.distance=${longitude}%2C+${latitude}%2C+1000`).then(result => {
+        return axios.get(`${process.env.API_HOSPITAL_URL as string}&geofilter.distance=${longitude}%2C+${latitude}%2C+10000`).then(result => {
             return response.json(result.data).status(200);
         }).catch(err => {
             return response.json(err).status(400);
