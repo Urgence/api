@@ -34,11 +34,14 @@ for swagger documentation go to /docs
 ```
   
  ## AUTHORS
+```
 
   Ibrahima DANSOKO
   Benjamin BENOIT
   Yassine FATIHI
   Quentin GUICHAOUA 
+  
+```
   
 ## License
 
